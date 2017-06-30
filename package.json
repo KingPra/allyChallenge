@@ -1,0 +1,28 @@
+{
+  "name": "ally-challenge",
+  "version": "1.0.0",
+  "description": "![Ally Logo](http://marketing.tradeking.com/page/ally-and-tradeking-learn-more/i/logo_ally-doitright.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KingPra/allyChallenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KingPra/allyChallenge/issues"
+  },
+  "homepage": "https://github.com/KingPra/allyChallenge#readme",
+  "devDependencies": {
+    "gulp-browserify": "^0.5.1",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {
+    "image-min": "^0.3.2",
+    "imagemin": "^5.3.1"
+  }
+}
