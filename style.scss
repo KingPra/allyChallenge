@@ -9,6 +9,14 @@ $grey: #f4f5f6;
 $table_lt_green: #edf5ef;
 $table_dk_green: #dfebe2;
 
+.cover {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: .5;
+}
+
 
 // nav bar
 .nav_bar {
@@ -48,12 +56,55 @@ $table_dk_green: #dfebe2;
     font-weight: bold;
   }
 }
+
+// overlay for popup
+.cover {
+  position: absolute;
+  background: black;
+  opacity: .6;
+  width: 100%;
+  height: 250%;
+  margin: -100px 0;
+  display: none;
+}
+// popup login box
+.login_box {
+  border: .5px solid grey;
+  display: none;
+  position: absolute;
+  background: white;
+  right: 600px;
+  top: 150px;
+
+  img {
+    float: right;
+    margin: 5px;
+  }
+
+
+  .login_form {
+    margin: 20px 20px;
+
+    button {
+      background: $purple;
+      float: right;
+      padding: 5px 25px;
+      margin: 10px 0;
+    }
+  }
+}
+
+
 // main section left
 .section_1 {
   display: inline-block;
   float: left;
   padding: 0 1% 1% 6%;
   width: 70%;
+
+  a {
+    color: $primary;
+  }
 
   h1 {
     color: $purple;

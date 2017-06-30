@@ -18,6 +18,21 @@
         <li><a href="#">contact</a></li>
       </ul>
     </nav>
+
+    <div class="cover"></div>
+
+    <div class="login_box">
+      <img src="./times.png" alt="x" onclick="cancel()">
+      <form class="login_form" action="index.html" method="post">
+        <h3>Sign In To Your Account</h3>
+        <label for="username">username</label>
+        <input type="text" name="username"><br/>
+        <label for="Password">Password</label>
+        <input type="text" name="password" value=""><br/>
+        <button type="button" name="button" onclick="cancel()">Login</button>
+      </form>
+    </div>
+
       <section class="section_1">
         <h1>Best Bank Ever!</h1>
         <p>Pellentesque habitant morbi tristique senectus et netus et <a href="#">malesuada</a> fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris <a href="#">placerat</a> eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.</p>
@@ -67,9 +82,9 @@
               <td>$333.99</td>
             </tr>
             <tr>
-              <td>test 1</td>
-              <td>0.75%</td>
-              <td>$333.99</td>
+              <td id="td1"></td>
+              <td id="td2"></td>
+              <td id="td3"></td>
             </tr>
             <tr>
               <td></td>
@@ -81,7 +96,7 @@
       </section>
 
       <section class="sidebar">
-        <button type="button" name="button" href"#">Login</button>
+        <button type="button" name="button" onclick="login()" href"#">Login</button>
         <div>
           <p class="news">News</p>
           <p class="archive">Archive</p>
