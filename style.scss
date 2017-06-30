@@ -220,30 +220,49 @@ $table_dk_green: #dfebe2;
     width: 100%;
     margin-top: 10px;
   }
+  // news container
+  .news_container {
+    display: block;
 
-  .news {
-    text-align: left;
-    background: $grey;
-    display: inline-block;
-    border-top: 1px solid lightgrey;
-    border-right: 1px solid lightgrey;
-    padding: 10px 10px 0 10px;
-  }
+    .news {
+      text-align: left;
+      background: $grey;
+      border-top: 1px solid lightgrey;
+      border-right: 1px solid lightgrey;
+      padding: 10px 10px 1px 10px;
+      display: inline-block;
+      position: absolute;
+      z-index: 3;
+    }
 
-  .archive {
-    background: $table_lt_green;
-    color: $primary;
-    display: inline;
-    border-top: 1px solid lightgrey;
-    border-right: 1px solid lightgrey;
-    padding: 5px 15px 2px 15px;
-    margin-left: -4px;
+      .archive_tab {
+        background: $table_lt_green;
+        color: $primary;
+        display: inline;
+        border-top: 1px solid lightgrey;
+        border-right: 1px solid lightgrey;
+        padding: 5px 15px 2px 15px;
+        position: absolute;
+        right: 262px;
+        top: 145px;
+        z-index: 1;
+
+        a {
+          text-decoration: none;
+          color: $primary;
+        }
+    }
+
   }
 
   .news_body {
     background: $grey;
     border-top: 1px solid lightgrey;
-    margin-top: -17px;
+    padding-bottom: 10px;
+    position: absolute;
+    width: 19%;
+    top: 190px;
+    z-index: 2;
 
     .news_title {
       color: $primary;
@@ -253,6 +272,57 @@ $table_dk_green: #dfebe2;
 
   p {
     padding: 0 10px;
+  }
+  //archive container
+  .archive_container {
+    display: none;
+
+    .archive {
+      text-align: left;
+      background: $grey;
+      border-top: 1px solid lightgrey;
+      border-right: 1px solid lightgrey;
+      border-left: 1px solid lightgrey;
+      padding: 10px 10px 1px 10px;
+      display: inline-block;
+      position: absolute;
+      right: 265px;
+      z-index: 3;
+    }
+
+      .news_tab {
+        background: $table_lt_green;
+        color: $primary;
+        display: inline;
+        border-top: 1px solid lightgrey;
+        border-right: 1px solid lightgrey;
+        padding: 5px 15px 2px 15px;
+        position: absolute;
+        right: 337px;
+        top: 145px;
+        z-index: 1;
+
+        a {
+          text-decoration: none;
+          color: $primary;
+        }
+    }
+
+  }
+
+  .archive_body {
+    background: $grey;
+    border-top: 1px solid lightgrey;
+    padding-bottom: 10px;
+    position: absolute;
+    width: 19%;
+    top: 190px;
+    z-index: 2;
+
+    .news_title {
+      color: $primary;
+      font-weight: 600;
+    }
   }
 }
 

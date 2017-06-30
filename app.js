@@ -25,13 +25,24 @@ function login () {
     cover.style.display = 'none';
   };
 
+  function tabSwitch (val) {
+    let news = document.querySelector('.news_container');
+    let archive = document.querySelector('.archive_container');
+    if (val === 'archive') {
+      news.style.display = 'none';
+      archive.style.display = 'block';
+      } else {
+        news.style.display = 'block';
+        archive.style.display = 'none';
+      }
+
+  }
+
 fetch('code-test.json').then(function(response) {
   return response.json();
 }).then(function(arr) {
   for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
-    console.log(name);
-    document.querySelector('#name' + i).innerHTML = arr[i].name;
+    let cellName = document.querySelector('#name' + i).innerHTML = arr[i].name;
     document.querySelector('#apy' + i).innerHTML = arr[i].apy + '%';
     document.querySelector('#earnings' + i).innerHTML = '$' + arr[i].earnings.toFixed(2);
 
@@ -52,4 +63,4 @@ fetch('code-test.json').then(function(response) {
     // tblbody.appendChild(row);
     // table.appendChild(tblbody);
   }
-})
+});
