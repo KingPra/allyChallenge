@@ -1072,7 +1072,7 @@ textarea {
   font-size: 0.8em; }
 
 .no_bg {
-  background: white; }
+  background: #fff; }
 
 .cover {
   position: fixed;
@@ -1101,7 +1101,7 @@ textarea {
     padding: 0; }
   .nav_bar li a {
     display: block;
-    color: white;
+    color: #fff;
     text-decoration: none;
     padding: 11px 25px; }
   .nav_bar li a:hover {
@@ -1121,7 +1121,7 @@ textarea {
   border: .5px solid grey;
   display: none;
   position: absolute;
-  background: white;
+  background: #fff;
   right: 600px;
   top: 150px; }
   .login_box img {
@@ -1139,7 +1139,7 @@ textarea {
       border: 1px solid #4a8fbd;
       padding: 5px 40px; }
     .login_box .login_form button {
-      color: white;
+      color: #fff;
       background: #5b145e;
       float: right;
       padding: 5px 25px;
@@ -1198,7 +1198,7 @@ textarea {
   padding-right: 150px; }
   .sidebar button {
     background: #5b145e;
-    color: white;
+    color: #fff;
     padding: 8px 0;
     width: 100%;
     margin-top: 10px; }
