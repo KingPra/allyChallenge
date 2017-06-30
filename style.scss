@@ -9,6 +9,24 @@ $grey: #f4f5f6;
 $table_lt_green: #edf5ef;
 $table_dk_green: #dfebe2;
 
+
+.bold {
+  font-weight: bold;
+}
+
+.right {
+  text-align: right;
+}
+
+.small_font {
+  font-weight: 300;
+  font-size: 0.8em;
+}
+
+.no_bg {
+  background: white;
+}
+
 .cover {
   position: fixed;
   width: 100%;
@@ -85,11 +103,27 @@ $table_dk_green: #dfebe2;
   .login_form {
     margin: 20px 20px;
 
+    h3 {
+      font-weight: 300;
+    }
+
+    label {
+      font-size: 0.9em;
+      margin: 5px;
+    }
+
+    input {
+      margin: 10px;
+      border: 1px solid $primary;
+      padding: 5px 40px;
+    }
+
     button {
+      color: white;
       background: $purple;
       float: right;
       padding: 5px 25px;
-      margin: 10px 0;
+      margin: 10px;
     }
   }
 }
@@ -166,6 +200,10 @@ $table_dk_green: #dfebe2;
     tr:nth-child(even) {
       background: $table_dk_green;
     }
+
+    td {
+      padding: 10px;
+    }
   }
 }
 // sidebar
@@ -216,10 +254,6 @@ $table_dk_green: #dfebe2;
   p {
     padding: 0 10px;
   }
-}
-
-.bold {
-  font-weight: bold;
 }
 
 footer {

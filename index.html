@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Urbank</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel=”shortcut icon” type=”image/x-icon” href=”public/favicon.ico”>
+    <link rel="stylesheet" href="public/style.css">
     <script type="text/javascript" src="../app.js"></script>
   </head>
   <body>
     <nav class="nav_bar">
-      <img src="./images/urbank.png" alt="urbank logo">
+      <img src="public/images/urbank.png" alt="urbank logo">
       <ul>
         <li><a href="#">home</a></li>
         <li><a href="#">employee</a></li>
@@ -25,7 +26,7 @@
       <img src="./times.png" alt="x" onclick="cancel()">
       <form class="login_form" action="index.html" method="post">
         <h3>Sign In To Your Account</h3>
-        <label for="username">username</label>
+        <label for="username">Username</label>
         <input type="text" name="username"><br/>
         <label for="Password">Password</label>
         <input type="text" name="password" value=""><br/>
@@ -49,47 +50,46 @@
         <div class="mobile_info">
             <p class="mobile_info_title bold">Amazing Mobile Info</p>
             <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-            <img src="./images/iphone.png" alt="iphone"/>
+            <img src="public/images/iphone.png" alt="iphone"/>
         </div>
 
         <div class="table">
           <p><span class="light_weight">Rates</span> | Check them out.</p>
-          <table>
-            <tr>
-              <td></td>
-              <td>annual Percentage Yield</td>
-              <td>Est. Earnings for  1 Year*</td>
+          <table id="table_row">
+            <tr class="no_bg">
+              <td class="no_bg"></td>
+              <td class="right small_font no_bg">Annual Percentage Yield</td>
+              <td class="right small_font no_bg">Est. Earnings for  1 Year*</td>
+            </tr>
+            <tr class="bold">
+              <td>Urbank</td>
+              <td class="right">0.87%</td>
+              <td class="right">$436.89</td>
             </tr>
             <tr>
-              <th>Urbank</th>
-              <th>0.87%</th>
-              <th>$436.89</th>
-            </tr>
-
-            <tr>
-              <td>test 1</td>
-              <td>0.75%</td>
-              <td>$333.99</td>
+              <td id="name0"></td>
+              <td class="right" id="apy0"></td>
+              <td class="right" id="earnings0"></td>
             </tr>
             <tr>
-              <td>test 1</td>
-              <td>0.75%</td>
-              <td>$333.99</td>
+              <td id="name1"></td>
+              <td class="right" id="apy1"></td>
+              <td class="right" id="earnings1"></td>
             </tr>
             <tr>
-              <td>test 1</td>
-              <td>0.75%</td>
-              <td>$333.99</td>
+              <td id="name2"></td>
+              <td class="right" id="apy2"></td>
+              <td class="right" id="earnings2"></td>
             </tr>
             <tr>
-              <td id="td1"></td>
-              <td id="td2"></td>
-              <td id="td3"></td>
+              <td id="name3"></td>
+              <td class="right" id="apy3"></td>
+              <td class="right" id="earnings3"></td>
             </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td><p>*Based on $50,000 deposit</p></td>
+            <tr class="no_bg">
+              <td class="no_bg"></td>
+              <td class="no_bg"></td>
+              <td class="right small_font no_bg">*Based on $50,000 deposit</td>
             </tr>
           </table>
         </div>

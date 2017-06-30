@@ -1061,6 +1061,19 @@ textarea {
       .column-block > :last-child {
         margin-bottom: 0; } }
 
+.bold {
+  font-weight: bold; }
+
+.right {
+  text-align: right; }
+
+.small_font {
+  font-weight: 300;
+  font-size: 0.8em; }
+
+.no_bg {
+  background: white; }
+
 .cover {
   position: fixed;
   width: 100%;
@@ -1116,11 +1129,21 @@ textarea {
     margin: 5px; }
   .login_box .login_form {
     margin: 20px 20px; }
+    .login_box .login_form h3 {
+      font-weight: 300; }
+    .login_box .login_form label {
+      font-size: 0.9em;
+      margin: 5px; }
+    .login_box .login_form input {
+      margin: 10px;
+      border: 1px solid #4a8fbd;
+      padding: 5px 40px; }
     .login_box .login_form button {
+      color: white;
       background: #5b145e;
       float: right;
       padding: 5px 25px;
-      margin: 10px 0; }
+      margin: 10px; }
 
 .section_1 {
   display: inline-block;
@@ -1166,6 +1189,8 @@ textarea {
       background: #edf5ef; }
     .section_1 .table tr:nth-child(even) {
       background: #dfebe2; }
+    .section_1 .table td {
+      padding: 10px; }
 
 .sidebar {
   float: left;
@@ -1201,9 +1226,6 @@ textarea {
       font-weight: 600; }
   .sidebar p {
     padding: 0 10px; }
-
-.bold {
-  font-weight: bold; }
 
 footer {
   display: inline-block;

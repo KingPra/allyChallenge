@@ -1,9 +1,11 @@
+
+
 console.log('well hello there');
 window.addEventListener('load', function () {
   login();
-  cancel();
 });
 
+// popup login box
 function login () {
   let login = document.querySelector('.login_box');
   let cover = document.querySelector('.cover');
@@ -15,10 +17,39 @@ function login () {
     cover.style.display = 'none';
   }
 };
-
+ // removes popup login box
   function cancel () {
     let login = document.querySelector('.login_box');
     let cover = document.querySelector('.cover');
     login.style.display = 'none';
     cover.style.display = 'none';
   };
+
+fetch('code-test.json').then(function(response) {
+  return response.json();
+}).then(function(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+    console.log(name);
+    document.querySelector('#name' + i).innerHTML = arr[i].name;
+    document.querySelector('#apy' + i).innerHTML = arr[i].apy + '%';
+    document.querySelector('#earnings' + i).innerHTML = '$' + arr[i].earnings.toFixed(2);
+
+    // had issues with seperating cells when dynamically building table rows.
+
+    // let table = document.querySelector('#table_row');
+    // let tblbody = document.createElement('tbody');
+    // let row = document.createElement('tr');
+    // let cell = document.createElement('td');
+    // let data = document.createTextNode(arr[i].name);
+    // let apy = document.createTextNode(arr[i].apy);
+    // let earnings = document.createTextNode(arr[i].earnings);
+    // console.log(`data: ${data}`)
+    // cell.appendChild(data);
+    // cell.appendChild(apy);
+    // cell.appendChild(earnings);
+    // row.appendChild(cell);
+    // tblbody.appendChild(row);
+    // table.appendChild(tblbody);
+  }
+})
