@@ -1,0 +1,105 @@
+@import 'node_modules/foundation-sites/scss/foundation';
+@include foundation-global-styles;
+@include foundation-grid;
+
+$primary: #4a8fbd;
+$hover_blue: #296896;
+$purple: #5b145e;
+$green: #bfd7c6;
+$grey: #f4f5f6;
+$table_lt_green: #edf5ef;
+$table_dk_green: #dfebe2;
+
+// main section left
+.section_1 {
+  @include breakpoint(small) {
+    margin: 0;
+    padding: 0 20px;
+    width: 100%;
+  }
+  @include breakpoint(large) {
+    display: inline-block;
+    float: left;
+    padding-left: 100px;
+    padding-right: 20px;
+    width: 70%;
+
+    a {
+      color: $primary;
+    }
+
+    h1 {
+      color: $purple;
+      font-weight: 400;
+      margin-top: 0;
+    }
+
+    ul {
+      padding: 0 0 15px;
+
+      li {
+        list-style-position: inside;
+      }
+    }
+  }
+  // section with mobile info
+  .mobile_info {
+    background: $green;
+    @include breakpoint(small) {
+      .mobile_info_title {
+        padding-top: 10px;
+        padding-left: 15px;
+        padding-bottom: 0;
+        color: $purple;
+      }
+
+      p {
+        width: 80%;
+        margin: 0;
+        padding-left: 15px;
+        padding-bottom: 15px;
+      }
+
+      img {
+        display: none;
+      }
+    }
+    @include breakpoint(large) {
+      img {
+        display: block;
+        float: right;
+        margin: -190px 40px;
+      }
+    }
+  }
+  
+  // Rates table
+  .table {
+    margin: 50px 0;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    p {
+      font-size: 2em;
+    }
+
+    .light_weight {
+      font-weight: 300;
+    }
+
+    tr:nth-child(odd) {
+      background: $table_lt_green;
+    }
+
+    tr:nth-child(even) {
+      background: $table_dk_green;
+    }
+
+    td {
+      padding: 10px;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import 'node_modules/foundation-sites/scss/foundation';
+@include foundation-global-styles;
+@include foundation-grid;
+$primary: #4a8fbd;
+$hover_blue: #296896;
+$purple: #5b145e;
+$green: #bfd7c6;
+$grey: #f4f5f6;
+$table_lt_green: #edf5ef;
+$table_dk_green: #dfebe2;
+
+.bold {
+  font-weight: bold;
+}
+
+.right {
+  text-align: right;
+}
+
+.small_font {
+  font-weight: 300;
+  font-size: 0.8em;
+}
+
+.no_bg {
+  background: #fff;
+}
+
+ @import 'navbar';
+ @import 'login_box';
+ @import 'section_1';
+ @import 'sidebar';
+ @import 'footer';

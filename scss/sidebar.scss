@@ -1,0 +1,137 @@
+@import 'node_modules/foundation-sites/scss/foundation';
+@include foundation-global-styles;
+@include foundation-grid;
+
+$primary: #4a8fbd;
+$hover_blue: #296896;
+$purple: #5b145e;
+$green: #bfd7c6;
+$grey: #f4f5f6;
+$table_lt_green: #edf5ef;
+$table_dk_green: #dfebe2;
+
+// sidebar
+.sidebar {
+  @include breakpoint (small) {
+    display: none;
+  }
+  @include breakpoint(large) {
+    float: left;
+    width: 30%;
+    padding-right: 100px;
+    position: relative;
+    display: block;
+
+// main login button
+    button {
+      background: $purple;
+      color: #fff;
+      padding: 8px 0;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    // news container
+    .news_container {
+      display: block;
+
+      .news {
+        text-align: left;
+        background: $grey;
+        border-top: 1px solid lightgrey;
+        border-right: 1px solid lightgrey;
+        padding: 10px 10px 1px;
+        display: inline-block;
+        position: absolute;
+        z-index: 3;
+      }
+
+      .archive_tab {
+        background: $table_lt_green;
+        color: $primary;
+        display: inline;
+        border-top: 1px solid lightgrey;
+        border-right: 1px solid lightgrey;
+        padding: 5px 15px 2px;
+        position: relative;
+        right: -57px;
+        top: 29px;
+        z-index: 1;
+
+        a {
+          text-decoration: none;
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .news_body {
+    background: $grey;
+    border-top: 1px solid lightgrey;
+    padding-bottom: 10px;
+    position: relative;
+    top: 27px;
+    z-index: 2;
+
+    .news_title {
+      color: $primary;
+      font-weight: 600;
+    }
+  }
+
+  p {
+    padding: 0 10px;
+  }
+  
+  //archive container
+  .archive_container {
+    display: none;
+    position: relative;
+
+    .archive {
+      text-align: left;
+      background: $grey;
+      border-top: 1px solid lightgrey;
+      border-right: 1px solid lightgrey;
+      border-left: 1px solid lightgrey;
+      padding: 10px 10px 1px;
+      display: inline-block;
+      position: relative;
+      right: -70px;
+      z-index: 3;
+    }
+
+    .news_tab {
+      background: $table_lt_green;
+      color: $primary;
+      display: inline;
+      border-top: 1px solid lightgrey;
+      border-right: 1px solid lightgrey;
+      padding: 5px 15px 2px;
+      position: relative;
+      right: 80px;
+      top: 1px;
+      z-index: 1;
+
+      a {
+        text-decoration: none;
+        color: $primary;
+      }
+    }
+  }
+
+  .archive_body {
+    background: $grey;
+    border-top: 1px solid lightgrey;
+    padding-bottom: 10px;
+    position: relative;
+    top: -17px;
+    z-index: 2;
+
+    .news_title {
+      color: $primary;
+      font-weight: 600;
+    }
+  }
+}

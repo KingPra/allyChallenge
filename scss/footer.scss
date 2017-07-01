@@ -1,0 +1,61 @@
+@import 'node_modules/foundation-sites/scss/foundation';
+@include foundation-global-styles;
+@include foundation-grid;
+
+$primary: #4a8fbd;
+$hover_blue: #296896;
+$purple: #5b145e;
+$green: #bfd7c6;
+$grey: #f4f5f6;
+$table_lt_green: #edf5ef;
+$table_dk_green: #dfebe2;
+
+
+footer {
+  @include breakpoint(small) {
+    display: inline-block;
+    width: 100%;
+    background: $grey;
+
+    .copyright {
+      padding-left: 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $primary;
+    }
+
+
+    ul {
+      display: none;
+    }
+  }
+  // footer nav
+  @include breakpoint(large) {
+    padding-bottom: 50px;
+
+    ul {
+      display: inline-block;
+      float: right;
+      margin-right: 100px;
+      list-style: none;
+      overflow: hidden;
+    }
+
+    li {
+      float: left;
+      padding: 0 15px;
+
+      a {
+        text-decoration: none;
+        font-size: 0.9em;
+        color: $primary;
+      }
+
+      a:hover {
+        font-weight: 500;
+      }
+    }
+  }
+}
