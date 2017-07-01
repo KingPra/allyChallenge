@@ -21,7 +21,7 @@ gulp.task('css', () => {
 
 
 gulp.task('js', () => {
-  return gulp.src('js/*')
+  return gulp.src('*js')
   .pipe(browser.browserify())
   .pipe(strip())
   .pipe(gulp.dest('public/'))
@@ -37,6 +37,5 @@ gulp.task('watch', ['default'], () => {
   gulp.watch('*.html', ['html']);
   gulp.watch('scss/*.scss', ['css']);
   gulp.watch('*.js', ['js']);
-  gulp.watch('js/*', ['js'])
   gulp.watch('images/*', ['images']);
 });

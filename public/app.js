@@ -1,8 +1,8 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 window.addEventListener('load', function () {
   login();
 });
 
-// popup login box
 function login () {
   let login = document.querySelector('.login_box');
   let cover = document.querySelector('.cover');
@@ -15,7 +15,6 @@ function login () {
   }
 };
 
-// removes popup login box
 function cancel () {
   let login = document.querySelector('.login_box');
   let cover = document.querySelector('.cover');
@@ -23,7 +22,6 @@ function cancel () {
   cover.style.display = 'none';
 };
 
-// switches between sidebar tabs
 function tabSwitch (val) {
   let news = document.querySelector('.news_container');
   let archive = document.querySelector('.archive_container');
@@ -36,7 +34,6 @@ function tabSwitch (val) {
     }
 }
 
-//highlights selected nav links
 function highlight (val) {
   document.querySelector('.one').style.background = 'none';
   document.querySelector('.two').style.background = 'none';
@@ -63,3 +60,5 @@ request.addEventListener('load', function() {
 
 });
 request.send();
+
+},{}]},{},[1]);

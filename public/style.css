@@ -3263,7 +3263,7 @@ textarea {
     .login_box .login_form input {
       margin: 10px;
       border: 1px solid #4a8fbd;
-      padding: 5px 40px; }
+      padding: 5px 10px; }
     .login_box .login_form button {
       color: #fff;
       background: #5b145e;
