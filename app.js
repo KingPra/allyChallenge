@@ -1,6 +1,3 @@
-
-
-console.log('well hello there');
 window.addEventListener('load', function () {
   login();
 });
@@ -25,6 +22,7 @@ function login () {
     cover.style.display = 'none';
   };
 
+  // switches between sidebar tabs
   function tabSwitch (val) {
     let news = document.querySelector('.news_container');
     let archive = document.querySelector('.archive_container');
@@ -35,7 +33,17 @@ function login () {
         news.style.display = 'block';
         archive.style.display = 'none';
       }
+  }
 
+  //highlights selected nav Anchors
+  function highlight (val) {
+    document.querySelector('.one').style.background = 'none';
+    document.querySelector('.two').style.background = 'none';
+    document.querySelector('.three').style.background = 'none';
+    document.querySelector('.four').style.background = 'none';
+    document.querySelector('.five').style.background = 'none';
+    let value = document.querySelector('.' + val);
+    value.style.background = '#296896';
   }
 
 fetch('code-test.json').then(function(response) {
@@ -46,7 +54,7 @@ fetch('code-test.json').then(function(response) {
     document.querySelector('#apy' + i).innerHTML = arr[i].apy + '%';
     document.querySelector('#earnings' + i).innerHTML = '$' + arr[i].earnings.toFixed(2);
 
-    // had issues with seperating cells when dynamically building table rows.
+    // had issues with separating cells when dynamically building table rows.
 
     // let table = document.querySelector('#table_row');
     // let tblbody = document.createElement('tbody');
