@@ -72,28 +72,26 @@ request.addEventListener('load', () => {
   let table = document.querySelector('#table_row_2');
   let arr = sortResponse(response);
 
-  for (let i = 0; i < arr.length; i++) {
+  arr.map(list => {
     let row = document.createElement('tr');
+    let call = [`${list.name}`, `${list.apy}%`, `$${list.earnings.toFixed(2)}`];
 
-    for (let j = 0; j < 3; j++) {
-      let call = [`${arr[i].name}`, `${arr[i].apy}%`, `$ ${arr[i].earnings.toFixed(2)}`];
-
+    call.map(item => {
       let cell = document.createElement('td');
-      let cellText = call[j];
-      cell.append(cellText);
+      cell.append(item);
       row.append(cell);
-    }
+    })
     table.append(row);
-  }
+  })
 });
 request.send();
 
 //bold letters for first data row
 function bold () {
   let number = 0;
-  let tables = document.querySelector('#table_row_2').rows
+  let tables = document.querySelector('#table_row_2')
   let fontWeight = 'font-weight';
-  console.log(tables);
+  console.log(tables.cellIndex);
   //tables.style.fontWeight = 'bold';
 }
 
