@@ -1,7 +1,3 @@
-window.addEventListener('load', function() {
-  login();
-});
-
 // popup login box
 function login() {
   let login = document.querySelector('.login_box');
@@ -48,27 +44,24 @@ function highlight(val) {
   value.style.background = '#296896';
 }
 
-
+// rearranges json, puts 'urbank' at index 0
 function sortResponse(arr) {
   let sorted = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].name.match(/urbank/i)) {
-      sorted.push(arr[i]);
-      arr.splice(i, 1);
+  arr.map((item, index) => {
+    if (item.name.match(/urbank/i)) {
+      sorted.push(item);
+      arr.splice(index, 1);
       arr.map(x => sorted.push(x));
     }
-  }
+  })
   return sorted;
 }
 
-
-
+// gets json and creates a <table>
 let request = new XMLHttpRequest();
 request.open('GET', 'code-test.json');
-
 request.addEventListener('load', () => {
   let response = JSON.parse(request.responseText);
-
   let table = document.querySelector('#table_row_2');
   let arr = sortResponse(response);
 
@@ -83,16 +76,24 @@ request.addEventListener('load', () => {
     })
     table.append(row);
   })
+  bold();
+  login();
 });
 request.send();
 
-//bold letters for first data row
-function bold () {
-  let number = 0;
-  let tables = document.querySelector('#table_row_2')
+//bold font for first data row
+function bold() {
+  let tables = document.querySelector('#table_row_2').getElementsByTagName('tr')
   let fontWeight = 'font-weight';
-  console.log(tables.cellIndex);
-  //tables.style.fontWeight = 'bold';
-}
+  tables[1].style.fontWeight = 'bold';
 
-bold()
+  for (let i = 1; i < tables.length; i++) {
+    let cell = tables[i].getElementsByTagName('td');
+
+    for (let j = 1; j < cell.length; j++) {
+      let textAlign = 'text-align';
+      cell[j].style.textAlign = 'right';
+      console.log(cell)
+    }
+  }
+}

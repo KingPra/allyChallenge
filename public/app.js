@@ -1,8 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-window.addEventListener('load', function() {
-  login();
-});
-
 function login() {
   let login = document.querySelector('.login_box');
   let cover = document.querySelector('.cover');
@@ -45,27 +41,22 @@ function highlight(val) {
   value.style.background = '#296896';
 }
 
-
 function sortResponse(arr) {
   let sorted = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].name.match(/urbank/i)) {
-      sorted.push(arr[i]);
-      arr.splice(i, 1);
+  arr.map((item, index) => {
+    if (item.name.match(/urbank/i)) {
+      sorted.push(item);
+      arr.splice(index, 1);
       arr.map(x => sorted.push(x));
     }
-  }
+  })
   return sorted;
 }
 
-
-
 let request = new XMLHttpRequest();
 request.open('GET', 'code-test.json');
-
 request.addEventListener('load', () => {
   let response = JSON.parse(request.responseText);
-
   let table = document.querySelector('#table_row_2');
   let arr = sortResponse(response);
 
@@ -80,16 +71,25 @@ request.addEventListener('load', () => {
     })
     table.append(row);
   })
+  bold();
+  login();
 });
 request.send();
 
-function bold () {
-  let number = 0;
-  let tables = document.querySelector('#table_row_2')
+function bold() {
+  let tables = document.querySelector('#table_row_2').getElementsByTagName('tr')
   let fontWeight = 'font-weight';
-  console.log(tables.cellIndex);
-}
+  tables[1].style.fontWeight = 'bold';
 
-bold()
+  for (let i = 1; i < tables.length; i++) {
+    let cell = tables[i].getElementsByTagName('td');
+
+    for (let j = 1; j < cell.length; j++) {
+      let textAlign = 'text-align';
+      cell[j].style.textAlign = 'right';
+      console.log(cell)
+    }
+  }
+}
 
 },{}]},{},[1]);
