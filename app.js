@@ -1,9 +1,9 @@
-window.addEventListener('load', function () {
+window.addEventListener('load', function() {
   login();
 });
 
 // popup login box
-function login () {
+function login() {
   let login = document.querySelector('.login_box');
   let cover = document.querySelector('.cover');
   if (login.style.display === 'none') {
@@ -16,7 +16,7 @@ function login () {
 };
 
 // removes popup login box
-function cancel () {
+function cancel() {
   let login = document.querySelector('.login_box');
   let cover = document.querySelector('.cover');
   login.style.display = 'none';
@@ -24,20 +24,20 @@ function cancel () {
 };
 
 // switches between sidebar tabs
-function tabSwitch (val) {
+function tabSwitch(val) {
   let news = document.querySelector('.news_container');
   let archive = document.querySelector('.archive_container');
   if (val === 'archive') {
     news.style.display = 'none';
     archive.style.display = 'block';
-    } else {
-      news.style.display = 'block';
-      archive.style.display = 'none';
-    }
+  } else {
+    news.style.display = 'block';
+    archive.style.display = 'none';
+  }
 }
 
 //highlights selected nav links
-function highlight (val) {
+function highlight(val) {
   document.querySelector('.one').style.background = 'none';
   document.querySelector('.two').style.background = 'none';
   document.querySelector('.three').style.background = 'none';
@@ -49,17 +49,52 @@ function highlight (val) {
 }
 
 
+function sortResponse(arr) {
+  let sorted = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].name.match(/urbank/i)) {
+      sorted.push(arr[i]);
+      arr.splice(i, 1);
+      arr.map(x => sorted.push(x));
+    }
+  }
+  return sorted;
+}
+
+
+
 let request = new XMLHttpRequest();
 request.open('GET', 'code-test.json');
-request.addEventListener('load', function() {
+
+request.addEventListener('load', () => {
   let response = JSON.parse(request.responseText);
-  console.log(response);
 
-  for (let i = 0; i < response.length; i++) {
-    document.querySelector('#name' + i).innerHTML = response[i].name;
-    document.querySelector('#apy' + i).innerHTML = response[i].apy + '%';
-    document.querySelector('#earnings' + i).innerHTML = '$' + response[i].earnings.toFixed(2);
-  };
+  let table = document.querySelector('#table_row_2');
+  let arr = sortResponse(response);
 
+  for (let i = 0; i < arr.length; i++) {
+    let row = document.createElement('tr');
+
+    for (let j = 0; j < 3; j++) {
+      let call = [`${arr[i].name}`, `${arr[i].apy}%`, `$ ${arr[i].earnings.toFixed(2)}`];
+
+      let cell = document.createElement('td');
+      let cellText = call[j];
+      cell.append(cellText);
+      row.append(cell);
+    }
+    table.append(row);
+  }
 });
 request.send();
+
+//bold letters for first data row
+function bold () {
+  let number = 0;
+  let tables = document.querySelector('#table_row_2').rows
+  let fontWeight = 'font-weight';
+  console.log(tables);
+  //tables.style.fontWeight = 'bold';
+}
+
+bold()

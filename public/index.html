@@ -7,7 +7,7 @@
   <title>URBank</title>
   <link rel=”shortcut icon” type=”image/x-icon” href=”public/favicon.ico”>
   <link rel="stylesheet" href="public/style.css">
-  <script type="text/javascript" src="app.js"></script>
+
 </head>
 
 <body>
@@ -62,41 +62,17 @@
 
     <div class="table">
       <p><span class="light_weight">Rates</span> | Check them out.</p>
-      <table id="table_row">
+      <table id="table_row" data-columns="3">
         <tr class="no_bg">
-          <td class="no_bg"></td>
-          <td class="right small_font no_bg">Annual Percentage Yield</td>
+          <td class="right small_font no_bg" colspan="2">Annual Percentage Yield</td>
           <td class="right small_font no_bg">Est. Earnings for 1 Year*</td>
         </tr>
-        <tr class="bold">
-          <td>Urbank</td>
-          <td class="right">0.87%</td>
-          <td class="right">$436.89</td>
-        </tr>
-        <tr>
-          <td id="name0"></td>
-          <td class="right" id="apy0"></td>
-          <td class="right" id="earnings0"></td>
-        </tr>
-        <tr>
-          <td id="name1"></td>
-          <td class="right" id="apy1"></td>
-          <td class="right" id="earnings1"></td>
-        </tr>
-        <tr>
-          <td id="name2"></td>
-          <td class="right" id="apy2"></td>
-          <td class="right" id="earnings2"></td>
-        </tr>
-        <tr>
-          <td id="name3"></td>
-          <td class="right" id="apy3"></td>
-          <td class="right" id="earnings3"></td>
-        </tr>
+
+        <table id="table_row_2">
+        </table>
+
         <tr class="no_bg">
-          <td class="no_bg"></td>
-          <td class="no_bg"></td>
-          <td class="right small_font no_bg">*Based on $50,000 deposit</td>
+          <td class="right small_font no_bg" colspan="3">*Based on $50,000 deposit</td>
         </tr>
       </table>
     </div>
@@ -143,5 +119,7 @@
       <li><a href="#">contact</a></li>
     </ul>
   </footer>
+
+  <script type="text/javascript" src="app.js"></script>
 </body>
 </html>

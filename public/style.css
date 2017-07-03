@@ -4389,6 +4389,8 @@ textarea {
       background: #dfebe2; }
     .section_1 .table td {
       padding: 10px; }
+    .section_1 .table article[data-columns='3'] {
+      width: 800px; }
 
 html {
   font-family: sans-serif;
